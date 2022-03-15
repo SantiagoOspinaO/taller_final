@@ -2,6 +2,15 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 
+/**
+ * Se crea el request POST en el archivo register con el objetivo de registrar un nuevo usuario.
+ * 
+ * @version 1.00.00
+ * 
+ * @author Santiago Ospina Osorio <santiago.m200@outlook.es>
+ * 
+ * @since 1.00.000 14-03-2022
+ */
 router.post('/', (req, res, next) => {
     const { username, password } = req.body;
     const user = new User({ username, password});
@@ -15,11 +24,5 @@ router.post('/', (req, res, next) => {
         }
     });
 });
-
-router.post('/', (req, res, next) => {
-
-
-});
-
 
 module.exports = router;
